@@ -1,33 +1,26 @@
-const register = {
-     
-    constructor(usuario, gmail, senha) {
-        this.usuario = usuario
-        this.email = email 
-        this.senha.senha
-    },
+const usuarios = []
 
-    validarDados(res,req,next) {
-        if(!this.nickname || !this.email) {
+   function  validarDados(res,req,next) {
+        if(!nickname || !email || !senha) {
             res.status(400).send("Dados não foram preenchidos!");
         }
 
         next() //Vai seguir a ordem da rota criada no post dentro do script.js
-    },
+    }
 
-    verificarSeExiste(res,req,next) {
-        if(this.nickname == nickname) {
+    function verificarSeExiste(res,req,next) {
+        if(usuarios.find(usuario => usuario.nickname == nickname)) {
             res.status(400).send("Já existe usuário com esse nick");
         }
-        else if(this.email == email) {
+        else if(usuarios.find(usuario => usuario.email == email)) {
             res.status(400).send("Já existe usuário com esse email")
         }
         next();
-    },
+    }
 
-cadastrarDados(res,req,next) {
+function cadastrarDados(res,req,next) {
 usuarios.push(res.body);
     }
     
-}
 
 
